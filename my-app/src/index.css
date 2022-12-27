@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  height:1000px;
+ }
+ .footer {
+  background-color: #58D68D;
+  /* border-top:2px solid red; */
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: white;
+ }
+.header {
+  position: fixed;
+  width: 100%;
+}
