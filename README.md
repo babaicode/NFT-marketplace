@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -16,4 +17,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run dev`
 
-Run the BackEnd.\
+Run the BackEnd.\Run the BackEnd.\
+=======
+# NFT-marketplace
+>>>>>>> 5b9ba7c64895de3f2e4ee81514889c5dcbbf9f02
