@@ -1,10 +1,10 @@
 FROM node:12
 
-WORKDIR /src/app
+WORKDIR /my-app
 
-COPY package*.json ./
+COPY package.json ./
 
-RUN npm install --silent
+RUN npm install
 
 COPY . .
 

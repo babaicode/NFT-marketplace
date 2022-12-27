@@ -3,11 +3,11 @@ const app = express();
 const PORT = 3001;
 const cors = require("cors");
 const dotenv = require("dotenv");
+require("dotenv").config();
+require("./db/connectDB");
 dotenv.config();
 app.use(cors());
 app.use(express.json());
-require("./db/connectDB");
-require("dotenv").config();
 
 // import routes
 const userRoutes = require("./routes/user");

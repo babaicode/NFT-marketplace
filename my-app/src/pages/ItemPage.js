@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { AddToCartItem } from "../components/home/AddToCartItem";
-import file1 from "../others/file1.png";
+import file2 from "../others/file2.png";
 import { LikeOrDis } from "../components/LikeOrDis";
 
 export const ItemPage = () => {
@@ -30,7 +30,7 @@ export const ItemPage = () => {
           <Grid container spacing={2}>
             <Grid item xs={6}>
               <Box sx={{ mt: 3 }}>
-                <img src={file1} alt="" />
+                <img src={file2} alt="" />
               </Box>
             </Grid>
             <Grid item xs={4}>

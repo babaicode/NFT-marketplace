@@ -24,7 +24,6 @@ export const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   return (
-    <header className="header">
     <AppBar sx={{ m: 0, p: 0 }} position="static">
       <Container sx={{ m: 0, p: 0 }} maxWidth="xl">
         <Toolbar sx={{ m: 0, p: 0 }}>
@@ -93,6 +92,5 @@ export const Header = () => {
         </Toolbar>
       </Container>
     </AppBar>
-    </header>
   );
 };
