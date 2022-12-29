@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { AddToCartItem } from "../components/home/AddToCartItem";
 import file2 from "../others/file2.png";
-import { LikeOrDis } from "../components/LikeOrDis";
+import { LikeOrDis } from "../components/likeOrDislike/LikeOrDis";
 
 export const ItemPage = () => {
   const params = useParams();

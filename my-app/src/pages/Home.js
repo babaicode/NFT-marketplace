@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import * as React from "react";
-import { HelloBlock } from "../components/HelloBlock";
+import { HelloBlock } from "../components/home/HelloBlock";
 import { PopularCollections } from "../components/home/PopularCollections";
 
 export const Home = () => {
