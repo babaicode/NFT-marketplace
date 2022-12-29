@@ -14,9 +14,6 @@ export const AddToCartItem = ({ params, item }) => {
       .then(function (response) {
         console.log(response);
       })
-      .catch(function (error) {
-        console.log(error);
-      });
   };
   return (
     <Button variant="contained" target="_blank" onClick={addToCart}>

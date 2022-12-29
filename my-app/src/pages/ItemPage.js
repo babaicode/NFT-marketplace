@@ -14,12 +14,7 @@ export const ItemPage = () => {
     axios
       .get(`http://localhost:3001/api/nft/${params.id}`)
       .then((res) => {
-        console.log(res);
         setItem(res.data[0]);
-        console.log(res.data[0].like);
-      })
-      .catch((err) => {
-        console.log(err);
       });
   }, [params.id]);
 

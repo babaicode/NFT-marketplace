@@ -31,27 +31,28 @@ export const CreateProduct = () => {
     event.preventDefault();
     if (!nft.name) {
       setShowInputNameAlert(true);
-      setTimeout(() => {setShowErrorAlert(false)}, 2000);
+      setTimeout(() => {setShowInputNameAlert(false)}, 2000);
       return null;
     } else if (!nft.price) {
       setShowInputPriceAlert(true);
-      setTimeout(() => {setShowErrorAlert(false)}, 2000);
+      setTimeout(() => {setShowInputPriceAlert(false)}, 2000);
       return null;
     } else if (!nft.quantity) {
       setShowInputQuantityAlert(true);
-      setTimeout(() => {setShowErrorAlert(false)}, 2000);
+      setTimeout(() => {setShowInputQuantityAlert(false)}, 2000);
       return null;
     } else {
       axios
-        .post("http://localhost:3001/api/nft", nft)
-        .then(function (response) {
-          console.log(response);
-          setShowSuccessAlert(true);
-        })
-        .catch(function (error) {
-          console.log(error);
-          setShowErrorAlert(true);
-        });
+      .post("http://localhost:3001/api/nft", nft)
+      .then(function (response) {
+        console.log(response);
+        setShowSuccessAlert(true);
+      })
+      .catch(function (error) {
+        console.log(error);
+        setShowErrorAlert(true);
+        setTimeout(() => {setShowErrorAlert(false)}, 2000);
+      });
 
       setNft(nftDefaultState);
       setTimeout(() => {setShowSuccessAlert(false)}, 2000);
@@ -105,7 +106,7 @@ export const CreateProduct = () => {
       {showSuccessAlert && (
         <Alert severity="success">NFT successfully created!</Alert>
       )}
-      {showErrorAlert && <Alert severity="error">Something went wrong!</Alert>}
+      {showErrorAlert && <Alert severity="error">NFT with this name already exist!</Alert>}
       {showInputNameAlert && (
         <Alert severity="error">Please provide a name!</Alert>
       )}

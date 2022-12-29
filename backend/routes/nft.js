@@ -9,9 +9,6 @@ router.get("/", async (req, res) => {
     .then((result) => {
       res.send(result)
     })
-    .catch((err) => {
-      console.log(err)
-    });
 });
 //Get Nft by id
 router.get("/:id", async (req, res) => {
@@ -21,9 +18,6 @@ router.get("/:id", async (req, res) => {
     .then((result) => {
       res.send(result)
     })
-    .catch((err) => {
-      console.log(err)
-    });
 });
 //Like Nft
 router.put("/like/:id", async (req, res) => {

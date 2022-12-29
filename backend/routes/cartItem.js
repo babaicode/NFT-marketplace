@@ -8,16 +8,13 @@ router.get("/", async (req, res) => {
     .then((result) => {
       res.send(result);
     })
-    .catch((err) => {
-      console.log(err);
-    });
 });
 //Delete CartItem
 router.delete("/:id", function (req, res) {
   let delid = req.params.id;
   CartItem.findOneAndDelete({ id: delid }, function (err, docs) {
     if (err) {
-      res.send("error lol");
+      res.send(err);
     } else {
       res.send(docs);
     }

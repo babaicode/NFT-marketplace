@@ -22,12 +22,6 @@ export const LikeOrDis = ({
       .put(`http://localhost:3001/api/nft/like/${params}`, {
         like: true,
         dislike: false,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
       });
   };
   const handleUnlike = () => {
@@ -36,12 +30,6 @@ export const LikeOrDis = ({
       .put(`http://localhost:3001/api/nft/like/${params}`, {
         like: false,
         dislike: isDis,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
       });
   };
   const handleDis = () => {
@@ -51,12 +39,6 @@ export const LikeOrDis = ({
       .put(`http://localhost:3001/api/nft/dislike/${params}`, {
         dislike: true,
         like: false,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
       });
   };
   const handleUnDis = () => {
@@ -65,12 +47,6 @@ export const LikeOrDis = ({
       .put(`http://localhost:3001/api/nft/dislike/${params}`, {
         dislike: false,
         like: isLike,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
       });
   };
 
@@ -120,5 +96,4 @@ export const LikeOrDis = ({
     );
   }
 
-  return null;
 };

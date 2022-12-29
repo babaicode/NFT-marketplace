@@ -20,7 +20,6 @@ export const PopularCollections = () => {
         setFiltered(res.data);
       })
       .catch((err) => {
-        console.log(err);
         setErrors(err.response.data);
       });
   }, [setItems]);

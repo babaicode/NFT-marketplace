@@ -36,13 +36,9 @@ export const Register = () => {
       axios
         .post("http://localhost:3001/api/user", user)
         .then((response) => {
-          console.log(response);
           localStorage.setItem("token", response.data);
           window.location = "/login";
         })
-        .catch((error) => {
-          console.log(error);
-        });
       setUser(userDefaultState);
     }
   };

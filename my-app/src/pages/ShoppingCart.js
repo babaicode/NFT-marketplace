@@ -9,12 +9,8 @@ export const ShoppingCart = () => {
     axios
       .get("http://localhost:3001/api/cart")
       .then((res) => {
-        console.log(res);
         setCart(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
+      });
   }, [setCart]); 
   return (
     <>

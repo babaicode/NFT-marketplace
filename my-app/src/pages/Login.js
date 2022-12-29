@@ -21,12 +21,10 @@ export const Login = () => {
     axios
       .post("http://localhost:3001/api/auth", user)
       .then(function (response) {
-        console.log(response);
         localStorage.setItem("login", response.data);
         window.location = "/";
       })
       .catch(function (error) {
-        console.log(error);
         setErrors(error.response.data);
       });
 

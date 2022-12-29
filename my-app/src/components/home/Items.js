@@ -15,7 +15,6 @@ export const Items = (item) => {
         window.location.reload();
       })
       .catch((error) => {
-        console.error("There was an error!", error);
         setErrors(error.response.data);
       });
   };
