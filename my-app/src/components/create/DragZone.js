@@ -9,7 +9,7 @@ export const DragZone = ({onDrop}) => {
       {({ getRootProps, getInputProps }) => (
         <Box
           sx={{
-            bgcolor: Theme.palette.otherColor.main,
+            bgcolor: Theme.palette.otherColor.light,
             boxShadow: 1,
             borderRadius: 5, p: 2, m: 1, mt: 3, ml: 2, mr: 2, mb: 2, pb: 8
           }}

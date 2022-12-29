@@ -7,8 +7,8 @@ export const Theme = createTheme({
                            light: '#ABEBC6'
                   },
                   secondary:{
-                           main: '#CACFD2', 
-                           light: '#E5E7E9'
+                           main: '#F1F1F1', 
+                           light: '#F9F9F9'
                   },
                   otherColor:{
                            main: '#F9E79F',

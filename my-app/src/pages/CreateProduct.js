@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Stack, Grid, Alert } from "@mui/material";
+import { Stack, Grid, Alert } from "@mui/material";
 import { useState, useEffect } from "react";
 import { InputData } from "../components/create/InputData";
 import { DragZone } from "../components/create/DragZone";
@@ -63,9 +63,8 @@ export const CreateProduct = () => {
   return (
     <>
       <DragZone onDrop={(file) => setNft({ ...nft, file })} />
-      <Box sx={{ width: "100%", ml: 2 }}>
-        <Stack direction="row" spacing={2}>
-          <Grid container spacing={3} sx={{ maxWidth: "50%" }}>
+        <Stack direction="row" spacing={1}>
+          <Grid container >
             <InputData
               value={nft.name}
               onChange={(e) => setNft({ ...nft, name: e.target.value })}
@@ -83,7 +82,7 @@ export const CreateProduct = () => {
             />
           </Grid>
 
-          <Grid container spacing={3} sx={{ maxWidth: "50%" }}>
+          <Grid container spacing={1}>
             <SelectBlock
               value={nft.tag}
               onChange={(e) => setNft({ ...nft, tag: e.target.value })}
@@ -96,7 +95,6 @@ export const CreateProduct = () => {
             />
           </Grid>
         </Stack>
-      </Box>
       <InputData
         value={nft.description}
         onChange={(e) => setNft({ ...nft, description: e.target.value })}

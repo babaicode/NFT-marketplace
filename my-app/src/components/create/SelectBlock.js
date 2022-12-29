@@ -5,7 +5,6 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  Typography,
 } from "@mui/material";
 import md5 from "md5";
 import { Theme } from "../../others/Theme";
@@ -14,7 +13,7 @@ export const SelectBlock = ({ value, label, onChange }) => {
   const tagsArr = ["Art", "Photo"];
   const blockchainArr = ["Public", "Private"];
   return (
-    <Grid item xs={14} md={9}>
+    <Grid  md={11}>
       <Box
         sx={{
           bgcolor: Theme.palette.secondary.light,
@@ -27,7 +26,6 @@ export const SelectBlock = ({ value, label, onChange }) => {
           },
         }}
       >
-        <Typography>select tag</Typography>
         <FormControl sx={{ m: 1, minWidth: 120 }}>
           <InputLabel>{label}</InputLabel>
           <Select required value={value} label={label} onChange={onChange}>
