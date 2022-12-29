@@ -5,7 +5,7 @@ import { Theme } from "../others/Theme";
 import axios from "axios";
 import { CreateButton } from "../components/create/CreateButton";
 import { SwitchButton } from "../components/login/SwitchButton";
-import { Typography } from "@mui/material";
+import { Alert } from "@mui/material";
 const userDefaultState = {
   userName: "",
   email: "",
@@ -14,24 +14,39 @@ const userDefaultState = {
 
 export const Register = () => {
   const [user, setUser] = useState(userDefaultState);
-  const [errors, setErrors] = useState(null);
+  const [showInputUserNameAlert, setShowInputUserNameAlert] = useState(false);
+  const [showInputEmailAlert, setShowInputEmailAlert] = useState(false);
+  const [showInputPasswordAlert, setShowInputPasswordAlert] = useState(false);
 
   const addUser = (event) => {
     event.preventDefault();
-    axios
-      .post("http://localhost:3001/api/user", user)
-      .then((response) => {
-        console.log(response);
-        localStorage.setItem("token", response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-        setErrors(error.response.data);
-      });
-    setUser(userDefaultState);
+    if (!user.userName) {
+      setShowInputUserNameAlert(true);
+      setTimeout(() => {setShowInputUserNameAlert(false)}, 2000);
+      return null;
+    } else if (!user.email) {
+      setShowInputEmailAlert(true);
+      setTimeout(() => {setShowInputEmailAlert(false)}, 2000);
+      return null;
+    } else if (!user.password) {
+      setShowInputPasswordAlert(true);
+      setTimeout(() => {setShowInputPasswordAlert(false)}, 2000);
+      return null;
+    } else {
+      axios
+        .post("http://localhost:3001/api/user", user)
+        .then((response) => {
+          console.log(response);
+          localStorage.setItem("token", response.data);
+          window.location = "/login";
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      setUser(userDefaultState);
+    }
   };
 
-  console.log({ errors });
   return (
     <Box
       sx={{
@@ -42,13 +57,13 @@ export const Register = () => {
         m: 3,
       }}
     >
-      {errors &&
-        !user.userName &&
-        errors.map((x) => (
-          <Typography sx={{ fontWeight: "bold" }} align="center" variant="h5">
-            {x}
-          </Typography>
-        ))}
+      {showInputUserNameAlert && (
+        <Alert severity="error">Enter username!</Alert>
+      )}
+      {showInputEmailAlert && <Alert severity="error">Enter email!</Alert>}
+      {showInputPasswordAlert && (
+        <Alert severity="error">Enter password!</Alert>
+      )}
       <InputData
         value={user.userName}
         onChange={(e) => setUser({ ...user, userName: e.target.value })}

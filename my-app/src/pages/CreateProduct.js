@@ -24,19 +24,22 @@ export const CreateProduct = () => {
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
   const [showInputNameAlert, setShowInputNameAlert] = useState(false);
-  const [showInputPriceAlert, setSsetShowInputPriceAlert] = useState(false);
-  const [showInputQuantityAlert, setSsetShowInputQuantityAlert] = useState(false);
+  const [showInputPriceAlert, setShowInputPriceAlert] = useState(false);
+  const [showInputQuantityAlert, setShowInputQuantityAlert] = useState(false);
 
   const addNft = (event) => {
     event.preventDefault();
     if (!nft.name) {
       setShowInputNameAlert(true);
+      setTimeout(() => {setShowErrorAlert(false)}, 2000);
       return null;
     } else if (!nft.price) {
-      setSsetShowInputPriceAlert(true);
+      setShowInputPriceAlert(true);
+      setTimeout(() => {setShowErrorAlert(false)}, 2000);
       return null;
     } else if (!nft.quantity) {
-      setSsetShowInputQuantityAlert(true);
+      setShowInputQuantityAlert(true);
+      setTimeout(() => {setShowErrorAlert(false)}, 2000);
       return null;
     } else {
       axios
@@ -51,10 +54,7 @@ export const CreateProduct = () => {
         });
 
       setNft(nftDefaultState);
-      setTimeout(() => {
-        setShowSuccessAlert(false);
-        setShowErrorAlert(false);
-      }, 2000);
+      setTimeout(() => {setShowSuccessAlert(false)}, 2000);
     }
   };
   useEffect(() => {
